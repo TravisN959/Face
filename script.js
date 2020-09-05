@@ -1,5 +1,6 @@
 const video = document.getElementById('video')
 
+//Get models from folder and loads, once all loaded then starts video
 Promise.all([
   faceapi.nets.tinyFaceDetector.loadFromUri('/weights'),
   faceapi.nets.faceLandmark68Net.loadFromUri('/weights'),
@@ -7,6 +8,7 @@ Promise.all([
   faceapi.nets.faceExpressionNet.loadFromUri('/weights')
 ]).then(startVideo)
 
+//Start video
 function startVideo() {
   navigator.getUserMedia(
     { video: {} },
@@ -15,6 +17,8 @@ function startVideo() {
   )
 }
 
+
+//Will play video and draw respected faces
 video.addEventListener('play', () => {
   const canvas = faceapi.createCanvasFromMedia(video)
   document.body.append(canvas)
