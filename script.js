@@ -35,3 +35,18 @@ video.addEventListener('play', () => {
 })
 
 //Add jokes api to get jokes
+
+
+fetch("https://dad-jokes.p.rapidapi.com/random/jokes", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "dad-jokes.p.rapidapi.com",
+		"x-rapidapi-key": "75ffc45666msh54041ad9a0f1f22p1bdc2fjsn4851a6dbd8e2"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.log(err);
+});
