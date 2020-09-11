@@ -35,8 +35,6 @@ video.addEventListener('play', () => {
 })
 
 //Add jokes api to get jokes
-
-
 fetch("https://dad-jokes.p.rapidapi.com/random/jokes", {
 	"method": "GET",
 	"headers": {
